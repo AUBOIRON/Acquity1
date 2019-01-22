@@ -1,0 +1,161 @@
+
+.cxArial8{
+font-family:arial;
+font-size:8pt;
+}
+.cxArial10{
+font-family:arial;
+font-size:8pt;
+text-align: justify;
+}
+.cxTitre{
+font-family:arial;
+font-size:12pt;
+color:#1F497D;
+font-weight:bold;
+}
+.cxTextColor{
+color:#1F497D;
+}
+.cxHeadTitle{
+  color:white;
+  font-size:18pt;
+}
+.cxHeadSmallTitle{
+  color:yellow;
+  font-size:10pt;
+}
+.cxUnderline{
+  border-bottom :2px solid yellow;
+}
+.cxFooter {
+  font-family:arial;
+  font-size:8pt;
+  color : white;
+}
+
+.cxSMTitre {
+font-family:arial;
+font-size:10pt;
+color:#1F497D;
+font-weight:bold;
+}
+
+.cxSMTitreBlanc {
+font-family:arial;
+font-size:10pt;
+color:white;
+}
+
+  #mainNav {
+    background-color: #1F497D;
+  }
+
+  #mainNav .navbar-toggler {
+    font-size: 24px;
+    right: 0;
+    padding: 13px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  
+  #mainNav .navbar-brand {
+    color: #fed136;
+    font-family: 'Kaushan Script', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  
+  #mainNav .nav-link:hover {
+   text-decoration : underline;
+   text-decoration-color : yellow;
+  }
+  
+  #mainNav .navbar-nav .nav-item .nav-link {
+    font-size: 90%;
+    font-weight: 400;
+    padding: 0.75em 0;
+    letter-spacing: 1px;
+    color: white;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  }
+  
+
+  @media (min-width: 1050px) {
+    #mainNav {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+        transition: padding-top 0.3s, padding-bottom 0.3s;
+        border: none;
+        background-color: transparent;
+      }
+      #mainNav .navbar-brand {
+        font-size: 1.75em;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+      }
+      #mainNav .navbar-nav .nav-item .nav-link {
+        padding: 1.1em 1em !important;
+      }
+      #mainNav.navbar-shrink {
+        padding-top: 0;
+        padding-bottom: 0;
+        background-color: #1F497D;
+      }
+      #mainNav.navbar-shrink .navbar-brand {
+        font-size: 1.25em;
+        padding: 12px 0;
+      }
+      .container{
+        max-width:1000px;
+      }
+
+}
+.dropdown .dropdown-menu {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+  color:white;
+  
+}
+.dropdown-item {
+  color:white;
+}
+.dropdown-item:hover{
+  background-color: yellow;
+}
+
+.dropdown:hover .dropdown-menu {
+  max-height: 200px;
+  opacity: 1;
+}
+a.social-buttons {
+  font-size: 20px;
+  line-height: 30px;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  color: #1F497D;
+  border-radius: 100%;
+  outline: none;
+  background-color: white;
+}
+
+a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
+  background-color: yellow;
+}
+
+.Parcours{
+  text-align: left;
+}
+

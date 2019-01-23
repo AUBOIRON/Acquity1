@@ -47,6 +47,10 @@ font-size:10pt;
 color:white;
 }
 
+.cxBackground {
+  background-color:yellow;
+}
+
   #mainNav {
     background-color: #1F497D;
   }

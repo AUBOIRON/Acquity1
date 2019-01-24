@@ -143,10 +143,11 @@ color:white;
 }
 
 .dropdown:hover .dropdown-menu {
-  opacity: 1;
+  opacity: 0.9;
+ 
 }
 .dropdown-item {
-  color:white;
+  color:#1F497D;
 }
 .dropdown-item:hover{
   color: yellow;

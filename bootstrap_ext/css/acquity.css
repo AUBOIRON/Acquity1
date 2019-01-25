@@ -95,8 +95,7 @@ color:white;
 
   @media (min-width: 1050px) {
     #mainNav {
-        /* padding-top: 25px;
-        padding-bottom: 25px; */
+        
         -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
         transition: padding-top 0.3s, padding-bottom 0.3s;
         border: none;
@@ -124,6 +123,9 @@ color:white;
       }
 
 }
+#sous-menu{
+background-color: white;
+}
 .dropdown .dropdown-menu {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -139,7 +141,7 @@ color:white;
   font-size: 10pt;
   max-height: 200px;
   opacity: 0;
-  background-color: #1F497D;
+ 
 }
 
 .dropdown:hover .dropdown-menu {

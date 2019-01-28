@@ -191,10 +191,7 @@ a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#1F497D' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
  }
 
- .card-header {
-   background-color: #1F497D;
-   border-style: 1px solid #1F497D;
- }
+ 
  .card-header .fa {
   transition: .3s transform ease-in-out;
 }
@@ -214,7 +211,5 @@ a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
   transform: rotate(90deg);
 }
 
-.mb-0 {
-  color: white;
- 
-}
+
+

@@ -133,8 +133,8 @@ background-color: white;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 
-  max-height: 0;
-  display: block;
+  
+  display: none;
   overflow: hidden;
   color:white;
   font-family:Arial, Helvetica, sans-serif;
@@ -146,15 +146,14 @@ background-color: white;
 
 .dropdown:hover .dropdown-menu {
   opacity: 0.9;
+  display: block;
  
 }
 .dropdown-item {
   color:#1F497D;
 }
 .dropdown-item:hover{
-  color: #caa51e;
- 
-  
+  color: #caa51e !important; 
 }
 
 a.social-buttons {

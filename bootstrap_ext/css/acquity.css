@@ -213,3 +213,36 @@ a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
 
 
 
+.btn-light span {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  transition: 0.5s;
+  
+  
+}
+
+.btn-light span:after {
+  
+  position: absolute;
+  opacity: 0;
+  padding:20px;
+  left:200px;
+  
+  
+  transition: 0.5s;
+}
+
+.btn-light:hover span {
+  background-color: #1F497D;
+  border-radius:100%;
+  color:white;
+  
+  
+}
+
+.btn-light:hover span:after {
+  opacity: 1;
+ 
+ 
+}

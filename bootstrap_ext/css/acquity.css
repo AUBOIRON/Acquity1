@@ -164,14 +164,15 @@ a.social-buttons {
   height: 30px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  color: #1F497D;
+  color: white;
   border-radius: 100%;
   outline: none;
-  background-color: white;
+  background-color: #1F497D;
 }
 
 a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
-  background-color: yellow;
+  background-color: white;
+  color:#1F497D;
 }
 
 .Parcours{

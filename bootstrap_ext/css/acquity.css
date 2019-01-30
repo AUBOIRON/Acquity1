@@ -156,8 +156,8 @@ background-color: white;
   color: #caa51e !important; 
 }
 
-a:hover{
-  color:white;
+.cxFooter:hover {
+  color : white;
 }
 
 a.social-buttons {

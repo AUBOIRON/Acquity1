@@ -8,8 +8,23 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	
-	<link rel="icon" type="image/png" href="images/AcquityBlancFavicon.png" />
+	<!-- Android Devices High Resolution -->
+	<link rel="icon" type="image/png" sizes="192x192" href="images/192x192.png">
+	<!-- Android Devices Normal Resolution -->
+	<link rel="icon" type="image/png" sizes="128x128" href="images/128x128.png">
+	<!-- iPhone(first generation or 2G), iPhone 3G, iPhone 3GS -->
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="images/57x57.png">
+	<!-- iPad and iPad mini @1x -->
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="images/76x76.png">
+	<!-- iPhone 4, iPhone 4s, iPhone 5, iPhone 5c, iPhone 5s, iPhone 6, iPhone 6s, iPhone 7, iPhone 7s, iPhone8 -->
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="images/120x120.png">
+	<!-- iPad and iPad mini @2x -->
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="images/152x152.png">
+	<!-- iPad Pro -->
+	<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="images/167x167.png">
+	<!-- iPhone X, iPhone 8 Plus, iPhone 7 Plus, iPhone 6s Plus, iPhone 6 Plus -->
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="images/180x180.png">
+	<link rel="shortcut icon" type="image/png" href="images/57X57.png">
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="bootstrap_ext/css/acquity.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -146,16 +161,14 @@
 			<div class="row">
 				<div class="col-md-3" style="margin-bottom:45px;">
 						<div id="accordion" >
-								<div class="card">
-									<div class="card-header" style="padding:0px;">
-									  <h5 class="mb-0">
-										<button class="btn btn-light" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-												<img src="images/Scanner.png"  style="width:35px;height:35px;">
-												<br>
-												<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Inventaire</span>
-												
+								<div class="card" style="border:0px;">
+									<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+										<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+												<div class="bgImg">
+												<img src="images/Scanner.png"  style="width:35px;height:35px; margin-top:3px;">
+												</div>
+												<span style="display:block;margin-top:10px;">Inventaire</span>				
 										</button>
-									  </h5>
 									</div>
 									<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 									  <div class="card-body cxArial10Blue" >
@@ -170,15 +183,14 @@
 				</div>
 				<div class="col-md-3" style="margin-bottom:45px;">
 						<div id="accordion">
-								<div class="card">
-									<div class="card-header" id="headingTwo"  style="padding:0px;">
-									  <h5 class="mb-0">
-										<button class="btn btn-light" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-												<img src="images/am-reservation.png"  style="width:35px;height:35px;">
-												<br>
-												<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Réservation</span>
+								<div class="card"  style="border:0px;">
+									<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+										<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												<div class="bgImg">
+												<img src="images/am-reservation.png"  style="width:35px;height:35px; margin-top:3px;">
+												</div>
+												<span style="display:block;margin-top:10px;">Réservation</span>
 										</button>
-									  </h5>
 									</div>
 									<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 									  <div class="card-body cxArial10Blue">
@@ -194,15 +206,15 @@
 				</div>
 				<div class="col-md-3" style="margin-bottom:45px;">
 						<div id="accordion">
-								<div class="card">
-									<div class="card-header"  style="padding:0px;">
-									  <h5 class="mb-0">
-										<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-												<img src="images/am-tableau-de-bord.png"  style="width:35px;height:35px;">
-												<br>
-												<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Tableau de bord</span>
+								<div class="card" style="border:0px;">
+									<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+										<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<div class="bgImg">
+												<img src="images/am-tableau-de-bord.png"  style="width:35px;height:35px; ">
+												</div>
+												<span style="display:block;margin-top:10px;">Tableau de bord</span>
 										</button>
-									  </h5>
+									  
 									</div>
 									<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 									  <div class="card-body cxArial10Blue">
@@ -218,15 +230,14 @@
 				  </div>
 				  <div class="col-md-3" style="margin-bottom:45px;">
 				  <div id="accordion">
-					<div class="card">
-						<div class="card-header"   style="padding:0px;">
-						  <h5 class="mb-0">
-							<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-									<img src="images/am-fournisseurs.png"  style="width:35px;height:35px;">
-									<br>
-									<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Fournisseurs</span>
-							</button>
-						  </h5>
+					<div class="card" style="border:0px;">
+						<div class="card-header"  style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+							<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								<div class="bgImg">
+								<img src="images/am-fournisseurs.png"  style="width:35px;height:35px; margin-top:3px;">
+								</div>
+								<span style="display:block;margin-top:10px;">Fournisseurs</span>
+							</button> 
 						</div>
 						<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
 						  <div class="card-body cxArial10Blue">
@@ -244,15 +255,14 @@
 			<div class="row">
 				<div class="col-md-3" style="margin-bottom:45px;">
 					<div id="accordion">
-						<div class="card">
-							<div class="card-header" style="padding:0px;">
-							<h5 class="mb-0">
-								<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-										<img src="images/am-pret.png"  style="width:35px;height:35px;">
-										<br>
-										<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Prêt</span>
+						<div class="card" style="border:0px;">
+							<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+								<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+									<div class="bgImg">
+									<img src="images/am-pret.png"  style="width:35px;height:35px; margin-top:3px;">
+									</div>	
+									<span style="display:block;margin-top:10px;">Prêt</span>
 								</button>
-							</h5>
 							</div>
 							<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
 								<div class="card-body cxArial10Blue">
@@ -268,15 +278,14 @@
 				</div>
 				<div class="col-md-3" style="margin-bottom:45px;">
 					<div id="accordion">
-						<div class="card">
-							<div class="card-header" style="padding:0px;">
-							<h5 class="mb-0">
-								<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-										<img src="images/am-plan.png"  style="width:35px;height:35px;">
-										<br>
-										<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Plan</span>
+						<div class="card" style="border:0px;">
+							<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+								<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+									<div class="bgImg">
+									<img src="images/am-plan.png"  style="width:35px;height:35px; margin-top:3px;">
+									</div>	
+									<span style="display:block;margin-top:10px;">Plan</span>
 								</button>
-							</h5>
 							</div>
 							<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
 								<div class="card-body cxArial10Blue">
@@ -290,15 +299,14 @@
 			</div>
 			<div class="col-md-3" style="margin-bottom:45px;">
 					<div id="accordion">
-						<div class="card">
-							<div class="card-header"  style="padding:0px;">
-							<h5 class="mb-0">
-								<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-										<img src="images/am-gestion-alerte.png"  style="width:35px;height:35px;">
-										<br>
-										<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Gestion Alerte</span>
+						<div class="card" style="border:0px;">
+							<div class="card-header"  style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+								<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+									<div class="bgImg">
+									<img src="images/am-gestion-alerte.png"  style="width:35px;height:35px; margin-top:3px;">
+									</div>	
+									<span style="display:block;margin-top:10px;">Gestion Alerte</span>
 								</button>
-							</h5>
 							</div>
 							<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
 								<div class="card-body cxArial10Blue">
@@ -314,15 +322,15 @@
 				</div>
 				<div class="col-md-3" style="margin-bottom:45px;">
 						<div id="accordion">
-							<div class="card">
-								<div class="card-header" style="padding:0px;">
-								<h5 class="mb-0">
-									<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-											<img src="images/am-demenagement.png"  style="width:35px;height:35px;">
-											<br>
-											<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Déménagement</span>
+							<div class="card" style="border:0px;">
+								<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+									<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+										<div class="bgImg">
+										<img src="images/am-demenagement.png"  style="width:35px;height:35px; margin-top:3px;">
+										</div>
+										<span style="display:block;margin-top:10px;">Déménagement</span>
 									</button>
-								</h5>
+								
 								</div>
 								<div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
 									<div class="card-body cxArial10Blue">
@@ -340,15 +348,14 @@
 		<div class="row">
 				<div class="col-md-4" style="margin-bottom:45px;">
 						<div id="accordion">
-							<div class="card">
-								<div class="card-header"  style="padding:0px;">
-								<h5 class="mb-0">
-									<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
-											<img src="images/am-contrats.png"  style="width:35px;height:35px;">
-											<br>
-											<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Contrats</span>
+							<div class="card" style="border:0px;">
+								<div class="card-header" style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+									<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+										<div class="bgImg">
+										<img src="images/am-contrats.png"  style="width:35px;height:35px; margin-top:3px;">
+										</div>	
+										<span  style="display:block;margin-top:10px;">Contrats</span>
 									</button>
-								</h5>
 								</div>
 								<div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
 									<div class="card-body cxArial10Blue">
@@ -365,14 +372,14 @@
 					</div>
 					<div class="col-md-4" style="margin-bottom:45px;">
 							<div id="accordion">
-								<div class="card">
-									<div class="card-header"  style="padding:0px;">
-									<h5 class="mb-0">
-										<button class="btn btn-light collapsed" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-												<img src="images/am-affectations.png"  style="width:35px;height:35px;">
-												<span class="cxArial10Blue" style="display:block;margin-top:10px;">Affectations</span>
+								<div class="card" style="border:0px;">
+									<div class="card-header"  style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+										<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+											<div class="bgImg">
+											<img src="images/am-affectations.png"  style="width:35px;height:35px; margin-top:3px;">
+											</div>	
+											<span style="display:block;margin-top:10px;">Affectations</span>
 										</button>
-									</h5>
 									</div>
 									<div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#accordion">
 										<div class="card-body cxArial10Blue">
@@ -386,15 +393,14 @@
 						</div>
 						<div class="col-md-4" style="margin-bottom:45px;">
 								<div id="accordion">
-									<div class="card">
-										<div class="card-header"  style="padding:0px;">
-										<h5 class="mb-0">
-											<button class="btn btn-light collapsed " style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
-													<img src="images/am-comptabilite.png"  style="width:35px;height:35px;">
-													<br>
-													<span class="cxArial10Blue"  style="display:block;margin-top:10px;">Comptabilité</span>
+									<div class="card" style="border:0px;">
+										<div class="card-header"  style="padding:0px;margin:0px;border-bottom:0px;border-left:0px">
+											<button class="btn-1" style="width:100%;height:100%" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+												<div class="bgImg">	
+												<img src="images/am-comptabilite.png"  style="width:35px;height:35px; margin-top:3px;">
+												</div>	
+												<span style="display:block;margin-top:10px;">Comptabilité</span>
 											</button>
-										</h5>
 										</div>
 										<div id="collapseEleven" class="collapse" aria-labelledby="headingEleven" data-parent="#accordion">
 											<div class="card-body cxArial10Blue">

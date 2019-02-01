@@ -122,14 +122,14 @@
 				<div class="col-md-6">
 						<table style="margin-top:70px;margin-bottom:70px;margin-left:20px;margin-right:20px;">
 								<tr>
-									<td></td>
+									
 									<td style="padding-bottom:25px;">
 										<span class="cxTitre">RECENSER VOS EQUIPEMENTS & PATRIMOINE</span>
 									</td>
-									<td></td>
+									
 								</tr>
 								<tr>
-									<td></td>
+									
 									<td style="max-width: 400px; ">
 										<p class="cxArial10" style="text-align:justify;">
 												Assure le pilotage et le suivi de l'ensemble des équipements d'un établissement en s'appuyant sur une 
@@ -137,14 +137,18 @@
 												de réaliser l'inventaire technique du parc immobilier.
 										</p>
 									</td>
-									<td></td>
+									
 								</tr>
 								<tr>
-									<td></td>
-									<td>
-										
+									<td style="width:100px;"> <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+										<div class="portfolio-hover">
+											<div class="portfolio-hover-content">
+												<i class="fa fa-plus "></i>  Obtenir la documentation AM
+											</div>
+										</div>
+									  </a>
 									</td>
-									<td></td>
+									
 								</tr>
 						</table>
 				</div>
@@ -462,7 +466,7 @@
 						<span style="font-size:10px;color:white;">Copyright&copy;<span style="color:yellow;font-size:8px">ACQUITY software 2018</span></span>
 					</div>
 					<div class="col-md-1 col-sm-4" style="text-align: center;">	
-						<a href="contact.html"><span class="cxFooter">CONTACT</span></a>
+						<a href="contact.html"><a href="MentionsLegales.html" style="font-size:10px;color:white;">Mentions légales</a>
 					</div>
 					<div class="col-md-2 col-sm-4"  style="text-align: center;">	
 							<table style="display:inline-block; padding:5px;">
@@ -518,6 +522,83 @@
 			</div>
 		</section>
 	</footer>
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+				<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+				<div class="col-lg-8 mx-auto">
+					<div class="modal-body">
+					<!-- Formulaire entier -->
+					<h2 class="text-uppercase">Demande de brochure AM</h2>
+					<p class="item-intro">Veuillez renseigner les champs obligatoires(*)</p>
+					<form id="Login" role="form" method="post" action="">
+						<div class="container">
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<input type="text" class="form-control" name="Name" placeholder="Nom *" checked required>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<input type="text" class="form-control" name="Name" placeholder="Prénom *" checked required>
+									</div>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<input type="text" class="form-control" name="Name" placeholder="Mail *" checked required>
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<input type="text" class="form-control" name="Name" placeholder="Adresse">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<div class="form-group">
+										<input type="text" class="form-control" name="Name" placeholder="Ville">
+									</div>
+								</div>
+								<div class="col">
+									<div class="form-group">
+										<input type="text" class="form-control" name="Name" placeholder="Code Postal">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6 offset-3">
+									<input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+									<label class="form-check-label" for="defaultCheck1">
+									En soumettant ce formulaire, j'accepte que les informations saisies soient exploitées dans le cadre de la demande de brochure et de la relation commerciale qui peut en découler.
+									</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col">
+									<button class="btn btn-outline-warning"  type="submit">
+								
+											Envoyer la demande</button>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
  	  		
 	<script src="jquery/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
@@ -526,6 +607,7 @@
     <!-- Plugin JavaScript -->
 	<script src="jquery-easing/jquery.easing.min.js"></script>	
 	<script src="bootstrap_ext/js/acquity.js"></script>
+	
 </body>
 </html>
 

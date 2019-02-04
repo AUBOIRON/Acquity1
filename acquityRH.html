@@ -28,6 +28,7 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="bootstrap_ext/css/acquity.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
 	<!-- Navigation -->
@@ -118,32 +119,30 @@
 						<img class="mx-auto img-fluid" src="images/rh-recrutements.jpg" style="width:350px; height:250px; ">
 					</div>
 				<div class="col-md-6">
-						<table style="margin-top:110px;margin-bottom:110px;margin-left:20px;margin-right:20px;">
-								<tr>
-									<td></td>
-									<td style="padding-bottom:25px;">
-										<span class="cxTitre">SUIVRE VOS RECRUTEMENTS</span>
-									</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td style="max-width: 400px; ">
-										<p class="cxArial10" style="text-align:justify;">
-											Permet d'optimiser les campagnes de recrutement de l'analyse des CV des candidats jusqu'aux entretiens annuel.
-                                        </p>
-                                        
-									</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>
-										
-									</td>
-									<td></td>
-								</tr>
-						</table>
+					<table style="margin-top:110px;margin-bottom:110px;margin-left:20px;margin-right:20px;">
+						<tr>
+							<td style="padding-bottom:25px;">
+								<span class="cxTitre">SUIVRE VOS RECRUTEMENTS</span>
+							</td>
+						</tr>
+						<tr>
+							<td style="max-width: 400px; ">
+								<p class="cxArial10" style="text-align:justify;">
+									Permet d'optimiser les campagnes de recrutement de l'analyse des CV des candidats jusqu'aux entretiens annuel.
+								</p>
+							</td>
+						</tr>
+						<tr>
+							<td style="width:100px;text-align: right"> <a class="portfolio-link" style="color:#1F497D;" data-toggle="modal" href="#portfolioModal1">
+								<div class="portfolio-hover">
+									<div class="portfolio-hover-content">
+										<i class="fa fa-plus "></i>  Obtenir la documentation RH
+									</div>
+								</div>
+								</a>
+							</td>
+						</tr>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -256,19 +255,112 @@
 			</div>
 		</section>
 	</footer>
- 	
- 	
- 	
- 	
- 	
- 	
- 	<tr>
- 		<td><!-- Exemples --></td>
- 	</tr>
-	
-    <tr>
-     	<td style="text-align:center; background-color:#1F497D; color:white; font-family:arial; word-spacing:6px;">
-			<!-- FOOTER -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="background-image:url(images/rh-header.png);background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; ">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<div class="modal-body">
+						<!-- Formulaire entier -->
+							<h2 class="text-uppercase">Demande de brochure RH</h2>
+								<p class="item-intro">Veuillez renseigner les champs obligatoires(*)</p>
+									<form id="Login" role="form" method="post" action="">
+										<div class="container">
+											<div class="row">
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="Nom" placeholder="Nom *" checked required>
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="Prenom" placeholder="Prénom *" checked required>
+													</div>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col">
+													<div class="form-group">
+														<select id="inputState" class="form-control" name="Civilite">
+															<option>Homme</option>
+															<option>Femme</option>
+														</select>
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="Societe" placeholder="Société *" checked required>
+													</div>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="Fixe" placeholder="Téléphone fixe">
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="Portable" placeholder="Téléphone portable">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="Email" placeholder="Mail*" checked required>
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="AdresseRue" placeholder="Adresse">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="AdresseVille" placeholder="Ville">
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<input type="text" class="form-control" name="AdresseCP" placeholder="Code postal">
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6 offset-3">
+													<input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+													<label class="form-check-label" for="defaultCheck1">
+															Les données personnelles recueillies dans le cadre de ce formulaire font l'objet d'un traitement informatique et sont destinées aux services de ACQUITY software en charge de traiter votre demande.<br>
+															Elles ne sont en aucun cas réutilisées à d'autres fins.<br>
+															Vous disposez d’un droit d’accès et de rectification que vous pouvez exercer en vous adressant par courriel à l'adresse <a href= "mailto:contact@acquitysoftware.com" style="color:white; text-decoration: underline;">contact@acquitysoftware.com</a> ou par téléphone au 01 46 63 63 50.
+															
+													</label>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<button class="btn btn-outline-warning"  type="submit">
+														Envoyer la demande</button></a>
+												</div>
+											</div>
+										</div>
+								</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
      		
 	<script src="jquery/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>

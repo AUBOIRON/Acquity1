@@ -1,8 +1,10 @@
+
 <!doctype html>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Acquity AM</title>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -537,7 +539,7 @@
 						<!-- Formulaire entier -->
 							<h2 class="text-uppercase">Demande de brochure AM</h2>
 								<p class="item-intro">Veuillez renseigner les champs obligatoires(*)</p>
-									<form id="Login" role="form" method="post" action="">
+									<form action="acquity.php" method="post" >
 										<div class="container">
 											<div class="row">
 												<div class="col">
@@ -555,8 +557,8 @@
 												<div class="col">
 													<div class="form-group">
 														<select id="inputState" class="form-control" name="Civilite">
-															<option>Homme</option>
-															<option>Femme</option>
+															<option value="0">Homme</option>
+															<option value="1">Femme</option>
 														</select>
 													</div>
 												</div>
@@ -569,12 +571,12 @@
 											<div class="row">
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="Fixe" placeholder="Téléphone fixe">
+														<input type="int" class="form-control" name="Fixe" placeholder="Téléphone fixe">
 													</div>
 												</div>
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="Portable" placeholder="Téléphone portable">
+														<input type="int" class="form-control" name="Portable" placeholder="Téléphone portable">
 													</div>
 												</div>
 											</div>
@@ -598,7 +600,7 @@
 												</div>
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="AdresseCP" placeholder="Code postal">
+														<input type="int" class="form-control" name="AdresseCP" placeholder="Code postal">
 													</div>
 												</div>
 											</div>

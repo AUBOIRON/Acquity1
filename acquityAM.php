@@ -31,9 +31,17 @@
 	<link href="bootstrap_ext/css/acquity.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+	
+<script type="text/javascript">
+function ouvrirLien ()
+         {
+         var link = "https://halshs.archives-ouvertes.fr/file/index/docid/490675/filename/management_public.pdf";
+         window.open(lien);
+         }
+</script>
 </head>
 <body>
+
 	<!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
@@ -539,17 +547,17 @@
 						<!-- Formulaire entier -->
 							<h2 class="text-uppercase">Demande de brochure AM</h2>
 								<p class="item-intro">Veuillez renseigner les champs obligatoires(*)</p>
-									<form action="acquity.php" method="post" >
+									<form method="post" >
 										<div class="container">
 											<div class="row">
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="Nom" placeholder="Nom *" checked required>
+														<input type="text" class="form-control" id="Verif" name="Nom" placeholder="Nom *" checked required>
 													</div>
 												</div>
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="Prenom" placeholder="Prénom *" checked required>
+														<input type="text" class="form-control" id="Verif" name="Prenom" placeholder="Prénom *" checked required>
 													</div>
 												</div>	
 											</div>
@@ -564,14 +572,14 @@
 												</div>
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="Societe" placeholder="Société *" checked required>
+														<input type="text" class="form-control"  id="Verif" name="Societe" placeholder="Société *" checked required>
 													</div>
 												</div>	
 											</div>
 											<div class="row">
 												<div class="col">
 													<div class="form-group">
-														<input type="int" class="form-control" name="Fixe" placeholder="Téléphone fixe">
+														<input type="int" class="form-control"   name="Fixe" placeholder="Téléphone fixe">
 													</div>
 												</div>
 												<div class="col">
@@ -583,7 +591,7 @@
 											<div class="row">
 												<div class="col">
 													<div class="form-group">
-														<input type="text" class="form-control" name="Email" placeholder="Mail*" checked required>
+														<input type="text" class="form-control"  id="Verif" name="Email" placeholder="Mail*" checked required>
 													</div>
 												</div>
 												<div class="col">
@@ -617,8 +625,8 @@
 											</div>
 											<div class="row">
 												<div class="col">
-													<button class="btn btn-outline-warning"  type="submit">
-														Envoyer la demande</button></a>
+														<button class="btn btn-outline-warning" id="monBtn" type="submit">
+														Envoyer la demande</button>
 												</div>
 											</div>
 										</div>

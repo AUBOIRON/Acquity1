@@ -409,3 +409,6 @@ a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
   transform: rotate(90deg);
   background-color: #212529;
 }
+.marquee {
+  width : 50px;
+}

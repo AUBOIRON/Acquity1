@@ -35,10 +35,7 @@
   
   })(jQuery); // End of use strict
   
-var element = document.getElementById('monBtn');
-element.onclick=function(){
-  window.open("https://www.w3schools.com", "_blank")
-}
+
 
  
 

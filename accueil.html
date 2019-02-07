@@ -65,7 +65,9 @@
 				  <a class="nav-link js-scroll-trigger" href="#team"><b>ACQUITY CLOUD</b></a>
 				</li>
 				<li class="nav-item">
-				  <a class="nav-link js-scroll-trigger" href="#contact"><b>CONTACT</b></a>
+				  <a class=" nav-link js-scroll-trigger portfolio-link" data-toggle="modal" href="#portfolioModal2"><b>CONTACT</b></a>
+					<div class="portfolio-hover">
+						<div class="portfolio-hover-content">
 				</li>
 			  </ul>
 			</div>
@@ -269,17 +271,17 @@
 				<div class="col-md-2 col-sm-4"  style="text-align: center;">
 					<span style="font-size:10px;color:white;">Copyright&copy;<span style="color:yellow;font-size:8px">ACQUITY software 2018</span></span>
 				</div>
-				<div class="col-md-1 col-sm-4" style="text-align: center;">	
+				<div class="col-md-2 col-sm-4" style="text-align: center;">	
 					<a href="MentionsLegales.html" style="font-size:10px;color:white;">Mentions légales</a>
 				</div>
-				<div class="col-md-2 col-sm-4"  style="text-align: center;">	
+				<div class="col-md-1 col-sm-4"  style="text-align: center;">	
 						<table style="display:inline-block; padding:5px;">
 								<tr>
-									<td>
-										<img src="images/adresse-blanc.png" style="height:20px;">
-									</td>
 									<td style="text-align:left;line-height:1;">
-										<span class="cxFooter"><b>ACQUITY software</b><br>4 Avenue Francois Arago<br> 92160 ANTONY</span>
+											<a class="portfolio-link cxFooter" data-toggle="modal" href="#portfolioModal3">Où nous trouver ?</a>
+											<div class="portfolio-hover">
+												<div class="portfolio-hover-content">
+										<!-- <span class="cxFooter">Où nous trouver ?</span> -->
 									</td>
 								</tr>
 						</table>
@@ -326,6 +328,142 @@
 		</div>
 	</section>
 </footer>
+<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="background-image:url(images/accueil-header.png);background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; ">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<div class="modal-body">
+						<!-- Formulaire entier -->
+							<h2 class="text-uppercase">CONTACTEZ-NOUS</h2>
+								<p class="item-intro">Veuillez renseigner les champs obligatoires(*)</p>
+									<form method="post" >
+										<div class="container ">
+											<div class="row">
+												<div class="col-6">
+													<div style="margin-bottom: 25px;">
+														<input type="text" class="form-control"  name="Nom" placeholder="Nom *" checked required>
+													</div>
+												</div>
+												<div class="col-6">
+													<div style="margin-bottom: 25px;">
+														<input type="text" class="form-control" name="Prenom" placeholder="Prénom *" checked required>
+													</div>
+												</div>	
+											</div>
+											<div class="row">
+												<div class="col-6">
+													<div style="margin-bottom: 25px;">
+														<input type="text" class="form-control" name="Email" placeholder="Mail*" checked required>
+													</div>
+												</div>
+												<div class="col-6">
+													<div style="margin-bottom: 25px;">
+														<input type="text" class="form-control"   name="Societe" placeholder="Societe*" checked required>
+													</div>
+												</div>	
+											</div>
+											<div class="row">
+													<div class="col-6">
+														<div style="margin-bottom: 25px;">
+															<input type="text" class="form-control"  name="Fonction" placeholder="Fonction*" checked required>
+														</div>
+													</div>
+													<div class="col-6">
+														<div style="margin-bottom: 25px;">
+															<input type="text" class="form-control"  id="Verif" name="Objet" placeholder="Objet*" checked required>
+														</div>
+													</div>	
+												</div>
+											<div class="row">
+												<div class="col-12">
+													<div style="margin-bottom: 25px;">
+														<textarea class="form-control" id="exampleFormControlTextarea1"  rows="5" name="Commentaire" placeholder="Commentaires"></textarea>
+													</div>	
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-6 offset-3">
+													<input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
+													<label class="form-check-label" for="defaultCheck1">
+															Les données personnelles recueillies dans le cadre de ce formulaire font l'objet d'un traitement informatique et sont destinées aux services de ACQUITY software en charge de traiter votre demande.<br>
+															Elles ne sont en aucun cas réutilisées à d'autres fins.<br>
+															Vous disposez d’un droit d’accès et de rectification que vous pouvez exercer en vous adressant par courriel à l'adresse <a href= "mailto:contact@acquitysoftware.com" style="color:white; text-decoration: underline;">contact@acquitysoftware.com</a> ou par téléphone au 01 46 63 63 50.
+															
+													</label>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+														<button class="btn btn-outline-warning" id="monBtn" type="submit">
+														Envoyer la demande</button>
+												</div>
+											</div>
+										</div>
+								</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content" style="background-image:url(images/formulaire-contact.png);background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; ">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 mx-auto">
+						<div class="modal-body">
+						<!-- Formulaire entier -->
+							<h2 class="text-uppercase">Localisation</h2>
+								<p class="item-intro">4 Avenue François Arago AntonyPôle, Antony 92160</p>
+									<form method="post" >
+										<div class="container">
+											<div class="row">
+												<div class="col">
+														<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2631.3827644888706!2d2.306988515635286!3d48.73638467927571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e677aa78667141%3A0x8eefd7fe82e2fe6a!2s4+Avenue+Fran%C3%A7ois+Arago%2C+92160+Antony!5e0!3m2!1sfr!2sfr!4v1549459148150" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col">
+													<div>
+														<p class="item-intro">Accesible via :</p>
+													</div>	
+												</div>
+											</div>
+											<div class="row">
+													<div class="col-6">
+														<div>
+															<img src="images/rerb.png" width="100px">
+														</div>	
+													</div>
+													<div class="col-6">
+															<div>
+																	<img src="images/1.png" width="50px"><img src="images/2.png" width="50px">
+															</div>	
+													</div>
+												</div>
+										</div>
+								</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 	<script src="jquery/jquery.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 

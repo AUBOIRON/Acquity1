@@ -184,9 +184,9 @@ a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
 }
 
 .carousel-inner img {
-  margin: auto;
-  width: 245px;
-  height: 138px;
+  width: 145px;
+  padding :25px;
+  height: 125px;
 }
 .carousel-control-prev-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='#1F497D' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;

@@ -1,4 +1,7 @@
-
+body {
+  margin:0;
+  padding:0;
+}
 .cxArial8{
 font-family:arial;
 font-size:8pt;
@@ -58,6 +61,19 @@ color:white;
 .cxBackground {
   background-color:yellow;
 }
+.fmFormVerdana16 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16pt;
+  font-weight: bold;
+  color: #1F497D;
+}
+.fmFormVerdana12 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12pt;
+  font-weight: bold;
+  color: #1F497D;
+}
+
 
   #mainNav {
     background-color: #1F497D;

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <title>Acquity - Formulaire FM</title>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Acquity - Formulaire FM</title>
 	<!-- Android Devices High Resolution -->
 	<link rel="icon" type="image/png" sizes="192x192" href="images/192x192.png">
 	<!-- Android Devices Normal Resolution -->
@@ -30,33 +30,109 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
-<body>
-    <section id="header" style="background-color:#1F497D">
-        <div class="row" >
-            <div class="col-md-3 ">
-                <span style="color:white; font-size: 16pt;display:inline-block;text-align:center">
-                    <b>logo gestionar</b>
-                </span>
+<body style="overflow-x: hidden">
+    <section id="formHeader" style="background-color:#1F497D;margin:0;padding:0">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 d-flex flex-wrap align-items-center" style="text-align: center;">
+                    <p style="color:white; font-size: 16pt; margin:0 auto">
+                        <b>logo gestionar</b>
+                    </p>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-center">
+                    <p style="color:white;margin:0 auto">
+                        Demandeur <br>
+                        <b> NOM ET PRENOM,</b> <br>
+                        DIRECTION GENERALE
+                    </p>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-center">
+                    <p style="color:white;margin:0 auto">
+                        Local intervention <br>
+                        B 26 2 ANTONYPOLE
+                    </p>
+                </div>
+                <div class="col-md-3 d-flex flex-wrap align-items-center" style="border-left: 1px solid white;text-align: center;">
+                    <p style="color:white;margin:0 auto">
+                        NUMELE COMPANIEI
+                    </p>
+                </div>
             </div>
-            <div class="col-md-3">
-                <span style="color:white;">
-                    Demandeur <br>
-                    <b> NOM ET PRENOM,</b> <br>
-                    DIRECTION GENERALE
-                </span>
+         </div>
+     </section>
+    <section id="formInfos" style="background-image:url(images/fm-header.png); background-size:cover;background-repeat:no-repeat; background-position: center; ">
+        <div class="row" style="color:white;">
+            <div class="col-md-6 offset-3" style="text-align: center; padding:15px;">
+                <p style="margin:0">
+                    NUMERO DE TICKET:(2018 - 0000001)
+                </p>
+                <p>
+                    STATUT:(texte personnalisé)
+                </p>
             </div>
-            <div class="col-md-3">
-                <span style="color:white;">
-                    Local intervention <br>
-                    B 26 2 ANTONYPOLE
-                </span>
+            <div class="col" style="padding:15px;">
+                <p>
+                    Date de création<br>
+                    Samedi 14 Juillet 2018
+                </p>
             </div>
-            <div class="col-md-3" style="border-left: 1px solid white;">
-                <span style="color:white;">
-                    NUMELE COMPANIEI
-                </span>
+        </div> 
+    <div class="container">
+        <div style="width: 1000px;height:500px;margin:0 auto;background-color:white;opacity:0.8;">
+            <div class="row" style="margin-right:10px;margin-left:10px">
+                <div class="col-12" style="border-bottom:0.5px solid black;">
+                    <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">Informations générales</p>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-6" >
+                    <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">Classification</p>
+                </div>
+                <div class="col-md-6">
+                    <p class="fmFormVerdana16" style="padding-top:15px;margin:0 auto;text-align: right;">ADMINISTRATION ACQUITY</p>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-2">
+                    <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">Symptôme</p>
+                </div>
+                <div class="col-md-10" style="text-align: left">
+                <p style="font-size:12pt;padding-top: 15px; margin:0 auto;">texte personnalisé texte personnalisé texte personnalisé</p>
+                </div>
+            </div>
+            <div class="row m-0">
+                    <div class="col-md-2">
+                        <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">Remarque</p>
+                    </div>
+                    <div class="col-md-10" style="text-align: left">
+                         <p style="font-size:12pt;padding-top: 15px; margin:0 auto;">texte personnalisé texte personnalisé texte personnalisé</p>
+                    </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-3"  style="border-bottom:0.5px solid black;">
+                    <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">Documents joints</p> 
+                </div>
+                <div class="col-md-3"  style="border-bottom:0.5px solid black;">
+                    <p style="padding-top: 20px; margin:0 auto">(Docx, Text, PDF, PNG, JPG)</p>
+                </div>
+                <div class="col-md-5 offset-1"  style="border-bottom:0.5px solid black;">
+                        <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">Formulaire d'action</p> 
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-3 d-flex flex-wrap align-items-center" style="margin-top: 35px;">
+                        <button type="button" class="btn btn-outline-secondary">Télécharger un fichier</button>
+                </div>
             </div>
         </div>
+    </div>
     </section>
+    <script src="jquery/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+		<!-- Plugin JavaScript -->
+	<script src="jquery-easing/jquery.easing.min.js"></script>	
+	<script src="bootstrap_ext/js/acquity.js"></script>
 </body>
 </html>

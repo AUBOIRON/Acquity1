@@ -6,46 +6,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="keywords" content="acquity software,acquitysoftware,acquityCX,acquity CX,acquityRP,acquity RP,acquityRH,acquity RH,acquityAM,acquity AM,acquityFM,acquity FM,logiciel achat,logiciel stock,logiciel parc,gestion de parc,asset management,gmao,help desk,inventaire,gestion des incidents,facility management,gestion contact,gestion des elus,gestion des reunions,gestion des evenements,seminaire,organisation,club,presse,fournisseur,contrat,code barres,RFID" />
-	<meta name="description" content="ACQUITY software propose une gamme dédiée aux entreprises publiques et privées. Elle répond aux attentes des Services Généraux, Financiers, Achats, Logistique, Informatique, Marketing, Communication, Commercial et Ressources humaines." />
-    <link rel="shortcut icon" href="${APP:CONTEXT}/bootstrap_ext/images/acquity_icon.ico" />
-    <link rel="icon" type="image/png" href="${APP:CONTEXT}/bootstrap_ext/images/acquity_icon.png" />
-    <!-- On ouvre la fenêtre à la largeur de l'écran -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Intégration du CSS Bootstrap -->
-	<link href="${APP:CONTEXT}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-	
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-	<![endif]-->
-	
-	<link href="${APP:CONTEXT}/bootstrap_ext/css/styles.css" rel="stylesheet">
-	<link href="${APP:CONTEXT}/bootstrap_ext/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-	<link href="${APP:CONTEXT}/bootstrap_ext/css/bootstrap-select.min.css" rel="stylesheet">
-	<!-- For table sorter jQuery plugin -->
-	<link href="${APP:CONTEXT}/bootstrap_ext/css/theme.blue.css" rel="stylesheet">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Android Devices High Resolution -->
+	<link rel="icon" type="image/png" sizes="192x192" href="images/192x192.png">
+	<!-- Android Devices Normal Resolution -->
+	<link rel="icon" type="image/png" sizes="128x128" href="images/128x128.png">
+	<!-- iPhone(first generation or 2G), iPhone 3G, iPhone 3GS -->
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="images/57x57.png">
+	<!-- iPad and iPad mini @1x -->
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="images/76x76.png">
+	<!-- iPhone 4, iPhone 4s, iPhone 5, iPhone 5c, iPhone 5s, iPhone 6, iPhone 6s, iPhone 7, iPhone 7s, iPhone8 -->
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="images/120x120.png">
+	<!-- iPad and iPad mini @2x -->
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="images/152x152.png">
+	<!-- iPad Pro -->
+	<link rel="apple-touch-icon" type="image/png" sizes="167x167" href="images/167x167.png">
+	<!-- iPhone X, iPhone 8 Plus, iPhone 7 Plus, iPhone 6s Plus, iPhone 6 Plus -->
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="images/180x180.png">
+	<link rel="shortcut icon" type="image/png" href="images/57X57.png">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap_ext/css/acquity.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <style>
-    .fmFormVerdana16 {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 16pt;
-        font-weight: bold;
-        color: #1F497D;
-    }
-    .fmFormVerdana12 {
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 12pt;
-        font-weight: bold;
-        color: #1F497D;
-    }
-    </style>
 </head>
 <body style="overflow-x: hidden">
     <section id="formHeader" style="background-color:#1F497D;margin:0;padding:0">
@@ -53,30 +36,25 @@
             <div class="row">
                 <div class="col-md-3 d-flex flex-wrap align-items-center col-sm-3 col-12" style="text-align: center;">
                     <p style="color:white; font-size: 16pt; margin:0 auto">
-                        <a href="${APP:CONTEXT}">
-                            ${IF:'${P:demande.demandeur.cxsService.cxsSociete.image}'!='':
-                                <img src="${APP:CONTEXT}/.cxuDownload?contextDir=${APP:CONTEXTDIR}&object=cxsSociete&fileName=fromDisk.${P:demande.demandeur.cxsService.cxsSociete.image}" style="height:50px;width:auto;">
-                            @@@ ${IF:'${P:demande.demandeurCompte.image}'!='':
-                                <img src="${APP:CONTEXT}/.cxuDownload?contextDir=${APP:CONTEXTDIR}&object=compte&fileName=fromDisk.${P:demande.demandeurCompte.image}" style="height:50px;width:auto;">
-                            @@@
-                                <img style="height:50px;width:auto;" alt="ACQUITY software" src="${APP:CONTEXT}/images/logo_login.png" />
-                            }}
-                        </a>
+                        <b>logo gestionar</b>
                     </p>
                 </div>
                 <div class="col-md-3 d-flex flex-wrap align-items-center col-sm-3 col-6">
                     <p style="color:white;margin:0 auto">
-                        <b>${I18N:${language}:demande.demandeur}</b><br> ${P:demande.demandeur.completeName}${P:demande.demandeurContact.completeName}<br> ${P:demande.serviceDemandeur.nom}${P:demande.demandeurCompte.nom}
+                        Demandeur <br>
+                        <b> NOM ET PRENOM,</b> <br>
+                        DIRECTION GENERALE
                     </p>
                 </div>
                 <div class="col-md-3 d-flex flex-wrap align-items-center col-sm-3 col-6">
                     <p style="color:white;margin:0 auto">
-                        ${I18N:${language}:demande.lieu}<br>${P:demande.lieu.numero} ${P:demande.etage} ${P:demande.cxsBatiment.nom} ${P:demande.cxsBatiment.cxsAdresse.adresseComplete}
+                        Local intervention <br>
+                        B 26 2 ANTONYPOLE
                     </p>
                 </div>
                 <div class="col-md-3 d-flex flex-wrap align-items-center col-sm-3 col-12" style="border-left: 1px solid white;text-align: center;">
                     <p style="color:white;margin:0 auto">
-                        ${P:affectation}
+                        NUMELE COMPANIEI
                     </p>
                 </div>
             </div>
@@ -87,16 +65,16 @@
             <div class="row" style="color:white;">
                 <div class="col-md-9 col-sm-6 col-6" style="text-align: center; padding:15px;">
                     <p style="margin:0">
-                        ${P:demande.numero}
+                        NUMERO DE TICKET:(2018 - 0000001)
                     </p>
                     <p>
-                        ${P:demande.detailStatut}
+                        STATUT:(texte personnalisé)
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-6 col-6" style="text-align: center; padding:15px;">
                     <p style="margin:0 auto">
-                        ${I18N:${language}:all.createdDate}<br>
-                        ${FORMAT:${P:demande.createdDate?string(EEEEE)}?capitalize} ${P:demande.createdDate?string(d MMMM yyyy HH:mm)}
+                        Date de création<br>
+                        Samedi 14 Juillet 2018
                     </p>
                 </div>
             </div> 
@@ -107,11 +85,8 @@
                     </div>
                 </div>
                 <div class="row m-0">
-                    <div class="col-md-3 col-12">
-                        <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">${I18N:${language}:demandeClassification}</p>
-                    </div>
-                    <div class="col-md-4 col-4" style="text-align: left">
-                        <p style="font-size:12pt;padding-top: 15px; margin:0 auto;"> ${P:demande.demandeClassification.nom}</p>
+                    <div class="col-md-7 col-12">
+                        <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">Classification</p>
                     </div>
                     <div class="col-md-5 col-sm-12 col-12">
                         <p class="text-left fmFormVerdana16" style="padding-top:15px;margin:0 auto;text-align: right;">ADMINISTRATION ACQUITY</p>
@@ -119,18 +94,18 @@
                 </div>
                 <div class="row m-0">
                     <div class="col-md-2 col-12">
-                        <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">${I18N:${language}:demandeSymptome}</p>
+                        <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">Symptôme</p>
                     </div>
                     <div class="col-md-10 col-12" style="text-align: left">
-                    <p style="font-size:12pt;padding-top: 15px; margin:0 auto;">${P:demande.demandeSymptome.nom}</p>
+                    <p style="font-size:12pt;padding-top: 15px; margin:0 auto;">texte personnalisé texte personnalisé texte personnalisé</p>
                     </div>
                 </div>
                 <div class="row m-0">
                         <div class="col-md-2 col-12">
-                            <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">${I18N:${language}:demande.remarque}</p>
+                            <p class="fmFormVerdana12" style="padding-top: 15px;margin:0 auto">Remarque</p>
                         </div>
                         <div class="col-md-10 col-12" style="text-align: left">
-                            <p style="font-size:12pt;padding-top: 15px; margin:0 auto;"></p>
+                            <p style="font-size:12pt;padding-top: 15px; margin:0 auto;">texte personnalisé texte personnalisé texte personnalisé</p>
                         </div>
                 </div>
                 <!--Formulaire + Fichier-->
@@ -142,11 +117,11 @@
                         <div class="col-md-12">
                             <div class="row">
                                 <div class="col-md-12" style="margin-top: 10px;">
-                                        <label for="dateDebut">${I18N:${language}:all.dateDebut}</label>
+                                        <label for="dateDebut">Date début</label>
                                         <input type="date" class="form-control" id="DateDebut" name="dateDebut" placeholder="Dade début" checked required>
                                 </div> 
                                 <div class="col-md-12" style="margin-top: 10px;">   
-                                        <label for="dateDebut">${I18N:${language}:all.dateFin}</label>
+                                        <label for="dateDebut">Date fin</label>
                                         <input type="date" class="form-control" id="DateFin" name="dateFin" placeholder="Dade fin" checked required>
                                 </div> 
                             </div>
@@ -162,7 +137,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12" style="margin-top: 15px; text-align: center">
-                                    <button type="button" class="btn btn-primary" id="registerButton" name="registerButton"	onclick="submitRegistration();return false;">${I18N:${language}:all.valider}</button>
+                                        <button type="button" class="btn btn-primary">Valider</button>
                                 </div>
                             </div>
                         </div>
@@ -170,13 +145,13 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="row m-0">
                             <div class=" col-lg-6 col-md-6 col-sm-6 col-6 p-0"  style="border-bottom:0.5px solid #BEB9B8">
-                                <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">${I18N:${language}:chapitre.cxsLocaux}</p> 
+                                <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">Documents joints</p> 
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-6 p-0"  style="border-bottom:0.5px solid #BEB9B8;">
                                 <p style="padding-top: 20px; margin:0 auto">(Docx, Text, PDF, PNG, JPG)</p>
                             </div>
                             <div class="col-md-12 col-12" style="margin-top: 35px;">
-                                <button type="button" class="btn btn-outline-secondary"><img src="https://image.noelshack.com/minis/2019/07/4/1550159649-cloud-storage-uploading-option-2.png" style="height:35px"> Télécharger un fichier</button>
+                                <button type="button" class="btn btn-outline-secondary"><img src="images/download.png" style="height:35px"> Télécharger un fichier</button>
                                 <div class="col-md-12 col-12" style="border: 0.5px solid #BEB9B8;margin-top:12px">
                                     <div class="row" style="margin:0 auto; padding:20px;">
                                         <div class="col-lg-8 col-md-8 col-sm-8 col-8">

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ACQUITY FM</title>
+	<meta name="keywords" content="acquity software,acquitysoftware,acquityCX,acquity CX,acquityRP,acquity RP,acquityRH,acquity RH,acquityAM,acquity AM,acquityFM,acquity FM,logiciel achat,logiciel stock,logiciel parc,gestion de parc,asset management,gmao,help desk,inventaire,gestion des incidents,facility management,gestion contact,gestion des elus,gestion des reunions,gestion des evenements,seminaire,organisation,club,presse,fournisseur,contrat,code barres,RFID" />
+	<meta name="description" content="ACQUITY software propose une gamme dédiée aux entreprises publiques et privées. Elle répond aux attentes des Services Généraux, Financiers, Achats, Logistique, Informatique, Marketing, Communication, Commercial et Ressources humaines." />
+
+	<link rel="shortcut icon" href="${APP:CONTEXT}/bootstrap_ext/images/acquity_icon.ico" />
+  	<link rel="icon" type="image/png" href="${APP:CONTEXT}/bootstrap_ext/images/acquity_icon.png" />
+
+	<!-- On ouvre la fenêtre à la largeur de l'écran -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Intégration du CSS Bootstrap -->
+	<link href="${APP:CONTEXT}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	<link href="${APP:CONTEXT}/bootstrap_ext/css/styles.css" rel="stylesheet">
+	<link href="${APP:CONTEXT}/bootstrap_ext/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="${APP:CONTEXT}/bootstrap_ext/css/bootstrap-select.min.css" rel="stylesheet">
+	<!-- For table sorter jQuery plugin -->
+	<link href="${APP:CONTEXT}/bootstrap_ext/css/theme.blue.css" rel="stylesheet">
+	<style>
+	.cxAsterix{color: rgb(219, 68, 55);}
+	</style>
+</head>
+<body>
+<!-- Conteneur principal -->
+<div class="container">
+
+<div class="page-header" style="padding-top:25px;">
+	<div class="row">
+		<div class="col-md-3">
+			<p><a href="${APP:CONTEXT}">
+			${IF:'${P:demande.demandeur.cxsService.cxsSociete.image}'!='':
+				<img src="${APP:CONTEXT}/.cxuDownload?contextDir=${APP:CONTEXTDIR}&object=cxsSociete&fileName=fromDisk.${P:demande.demandeur.cxsService.cxsSociete.image}" style="height:50px;width:auto;">
+			@@@ ${IF:'${P:demande.demandeurCompte.image}'!='':
+				<img src="${APP:CONTEXT}/.cxuDownload?contextDir=${APP:CONTEXTDIR}&object=compte&fileName=fromDisk.${P:demande.demandeurCompte.image}" style="height:50px;width:auto;">
+			@@@
+				<img style="height:50px;width:auto;" alt="ACQUITY software" src="${APP:CONTEXT}/images/logo_login.png" />
+			}}
+			</a></p>
+		</div>
+		<div class="col-md-6 text-center mytextsize mymiddle" style="padding-top:10px;">
+			<p><b>${P:demande.numero}</b><br>${P:demande.detailStatut}</p>
+		</div>
+		<div class="col-md-3 text-right mytextsize">
+			<p><b>${P:affectation}</b></p>
+		</div>
+	</div>
+</div>
+<div class="row text-center">
+	<p class="mytextsize">${portail.error}</p>
+</div>
+${IF:'${portail.error}'!=''::
+<div class="row" style="margin:0; padding:0px;padding-top:5px;">
+	<div class="col-xs-2"></div>
+	<div class="col-xs-8">
+		<p style="margin-bottom:2px;">${I18N:${language}:chapitre.generalInfo}</p>
+		<hr style="margin:0px;background-color:#1E4B7D;height:2px;"/>
+		<div class="row"> 
+			<div class="col-xs-6">
+				<p>
+					<span class="mytextcolor">${I18N:${language}:demandeClassification}</span> : ${P:demande.demandeClassification.nom}
+					<br><span class="mytextcolor">${I18N:${language}:demandeSymptome}</span> : ${P:demande.demandeSymptome.nom}
+					<br><span class="mytextcolor">${I18N:${language}:demande.remarque}</span> :
+				</p>
+			</div>
+			<div class="col-xs-6 text-right">
+				<p>
+					<span class="mytextcolor">${I18N:${language}:demande.demandeur}</span> : ${P:demande.demandeur.completeName}${P:demande.demandeurContact.completeName}, ${P:demande.serviceDemandeur.nom}${P:demande.demandeurCompte.nom}
+					<br><span class="mytextcolor">${I18N:${language}:all.createdDate}</span> : ${FORMAT:${P:demande.createdDate?string(EEEEE)}?capitalize} ${P:demande.createdDate?string(d MMMM yyyy HH:mm)}
+					<br><span class="mytextcolor">${I18N:${language}:demande.lieu}</span> : ${P:demande.lieu.numero} ${P:demande.etage} ${P:demande.cxsBatiment.nom}<br>${P:demande.cxsBatiment.cxsAdresse.adresseComplete}
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<p>${P:demande.remarque}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="alert hidden" role="alert" id="registerResult" name="registerResult"></div>
+			</div>
+		</div>
+		${IF:${VE:responseIntervenant}==1:
+		<div class="row" style="padding-top:25px;padding-bottom:25px;">
+			<div class="col-xs-12">
+				<div class="alert alert-success text-center" role="alert">${V:responseIntervenant}</div>
+			</div>
+		</div>
+		@@@
+		${IF:${P:demande.objects?size}<2:@@@<!-- Si au moins 2 objets -->
+		${IF:${P:demande.demandeClassification.type}!=2:@@@<!--  locaux  -->
+		<p style="margin-top:5px;margin-bottom:2px;">${I18N:${language}:chapitre.cxsLocaux}</p>
+		<hr style="margin:0px;background-color:#1E4B7D;height:2px;"/>
+		<div class="row">
+			<div class="col-xs-12">
+			<ul> 
+			${FOREACH:demande.objects:objItem:
+			  <li>(objItem.cxsLocal.completeName)</li>
+			}
+			</ul>
+			</div>
+		</div>
+		}
+		}
+		${VS:docs:list(cxsDocumentObject:(,parentId=${P:id},and,parentType=demandeAction,),or,(,parentId=${P:demande.id},and,parentType=demande,))}
+		<p style="margin-top:5px;margin-bottom:2px;">${I18N:${language}:button.docJoints}</p>
+		<hr style="margin:0px;background-color:#1E4B7D;height:2px;"/>
+		<div class="row">
+			<div class="col-xs-12">
+			${IF:${V:docs?size}==0::
+			<ul> 
+			${FOREACH:v.docs:docItem:
+			  <li><a href="${APP:CONTEXT}/.cxuDownload?contextDir=${APP:CONTEXTDIR}&object=(docItem.cxsDocument.group)&fileName=fromDisk.(docItem.cxsDocument.fileName)" 
+			  			target="_blank" class="cxUnderlineMiddleOut"> (docItem.cxsDocument.title)</a>
+			  		(docItem.[equal(createdBy;${APP:USER})@@@
+	        			<a href="javascript:deleteDocJoined((id));">
+	        				<img style="height:10px;width:auto;" src="${APP:CONTEXT}/acquityCX/images/toolbar/cancel.png">
+	        			</a>])
+			  </li>
+			}
+			</ul>
+			}
+			<p style="text-align:left;padding:5px;"><a href="javascript:addNewFile();"><img src="${APP:CONTEXT}/acquityCX/images/toolbar/new.png" id="imgAddNewFile" style="width:24px;height:auto;"></a></p>
+			<form class="form-horizontal hidden" role="form" style="padding-left:15px;padding-right:15px;"
+				id="fileForm" name="fileForm" method="post" enctype="multipart/form-data">		
+				<div class="form-group form-group-sm" style="margin-bottom:5px;">
+					<label for="fileInput" class="col-sm-3 control-label small" id="fileLabel" name="fileLabel">${I18N:${language}:button.addJoinedDoc}</label>
+					<div class="input-group col-sm-9">
+						<input type="file" id="fileInput" name="fileInput" class="filestyle" data-buttonText="..." data-size="sm">
+					</div>
+					<span class="help-block"></span>
+				</div>		
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-9 progress hidden" id="uploadFileProgress" name="uploadFileProgress">
+						<div class="progress-bar progress-bar-striped" role="progressbar" 
+								aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+								Uploading file, please wait...
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm-3"></div>
+					<div class="col-sm-9 alert-warning hidden" id="uploadFileError" name="uploadFileError"></div>
+				</div>
+				<input type="hidden" id="tempFileName" name="tempFileName"/>
+				<input type="hidden" id="realFileName" name="realFileName"/>
+			</form>
+			</div>
+		</div>
+		}
+	</div>
+	<div class="col-xs-2"></div>
+</div>
+${IF:${VE:responseIntervenant}==1::
+<div class="row" style="width:500px;margin:0 auto;padding-top:5px;">
+	<div id="formContainerWrapper" style="margin-top:0px;box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.37);background-color:white;padding:20px;">
+		<form class="form-horizontal" role="form" enctype="application/x-www-form-urlencoded"
+			id="registerForm" name="registerForm" method="post"
+			action="${APP:CONTEXT}/rest/demande/endAction" >
+		<div id="formDiv" name="formDiv">
+			<div class="row text-center">
+				<p class="mytextsize"><img style="height:16px;width:auto;" src="${APP:CONTEXT}/acquityCX/images/icons/16/dema_statut_${param.s}.png"> ${I18N:${language}:demandeAction.statut?${param.s}}</p>
+			</div>
+			<div class="form-group form-group-sm has-feedback" style="margin-bottom:5px;">
+				<label for="dateDebut" class="col-sm-3 control-label small">
+					${I18N:${language}:all.dateDebut} <span class="cxAsterix">*</span>
+				</label>
+				<div class="input-group col-sm-9">
+					<input type="text" class="form-control form_datetime input-sm" id="dateDebut" name="dateDebut" 
+						value="${dateDebut}" placeholder="${I18N:${language}:all.dateDebut}">
+					<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<span class="glyphicon form-control-feedback"></span>
+				</div>
+				<span class="help-block"></span>
+			</div>
+			<div class="form-group form-group-sm has-feedback" style="margin-bottom:5px;">
+				<label for="dateFin" class="col-sm-3 control-label small">
+					${I18N:${language}:all.dateFin} <span class="cxAsterix">*</span>
+				</label>
+				<div class="input-group col-sm-9">
+					<input type="text" class="form-control form_datetime input-sm" id="dateFin" name="dateFin" 
+						value="${dateFin}" placeholder="${I18N:${language}:all.dateFin}">
+					<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<span class="glyphicon form-control-feedback"></span>
+				</div>
+				<span class="help-block"></span>
+			</div>
+			<div class="form-group form-group-sm has-feedback" style="margin-bottom:5px;">
+				<label for="libelle" class="col-sm-3 control-label small">
+					${I18N:${language}:demandeAction.libelle}
+				</label>
+				<div class="input-group col-sm-9">
+					<textarea class="form-control input-sm" id="libelle" name="libelle" rows="2" readonly>${P:libelle}</textarea>
+					<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<span class="glyphicon form-control-feedback"></span>
+				</div>
+				<span class="help-block"></span>
+			</div>
+			<div class="form-group form-group-sm has-feedback" style="margin-bottom:5px;">
+				<label for="commentaire" class="col-sm-3 control-label small">
+					${I18N:${language}:demandeAction.commentaireResolution}
+				</label>
+				<div class="input-group col-sm-9">
+					<textarea class="form-control input-sm" id="commentaire" name="commentaire" rows="2" maxlength="250">${P:commentaireResolution}</textarea>
+					<span class="input-group-addon">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					<span class="glyphicon form-control-feedback"></span>
+				</div>
+				<span class="help-block"></span>
+			</div>
+		</div>
+		</form>
+		<div class="form-group form-group-sm" style="margin-bottom:5px;">
+			<div class="text-center">
+			  <button type="button" class="btn btn-primary" id="registerButton" name="registerButton"
+				onclick="submitRegistration();return false;">${I18N:${language}:all.valider}</button>
+			</div>
+		</div>		
+	</div>
+</div>
+<div class="row">
+	<div class="progress hidden" id="registerProgress" name="registerProgress">
+		<div class="progress-bar progress-bar-striped" role="progressbar" 
+				aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+				Please wait...
+		</div>
+	</div>
+</div>
+}
+}<!-- Fin IF -->
+
+<!-- Footer -->
+<footer>
+	<div class="col-md-auto mytextsize text-right" id="cxfooter">
+		<p style="padding-right:10px;font-size:75%;color:white;">
+			<a href="http://www.acquitysoftware.com" target="_blank">
+				Powered by ACQUITY software <img src="http://www.acquitysoftware.com/images/logo_fm_100.png" style="height:50px;width:auto;" class="mymiddle"/>
+			</a>
+		</p>
+	</div>
+</footer>
+
+</div> <!-- /container -->
+
+<!-- Intégration de la libraire jQuery -->
+<script src="${APP:CONTEXT}/bootstrap_ext/js/jquery-2.1.0.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/jquery.validate.min.js"></script>
+<!-- Intégration de la libraire de composants du Bootstrap -->
+<script src="${APP:CONTEXT}/bootstrap/js/bootstrap.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-datetimepicker.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-datetimepicker.fr.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-select.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-filestyle.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/acquity-forms.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+	$('.selectpicker').selectpicker();
+
+${IF:${VE:responseIntervenant}==1::
+    $("#dateDebut").datetimepicker({startView:2,autoclose:true, format: "dd/mm/yyyy hh:ii",language:"fr"});
+    $("#dateFin").datetimepicker({startView:2,autoclose:true, format: "dd/mm/yyyy  hh:ii",language:"fr"});
+    
+	$('#dateDebut').datetimepicker().on('changeDate', function(ev){
+		$('#dateFin').datetimepicker('setStartDate', ev.date);
+	});
+	$('#dateFin').datetimepicker().on('changeDate', function(ev){
+		$('#dateDebut').datetimepicker('setEndDate', ev.date);
+	});
+
+	//$('input[name="dateDebut"]').rules("add", { required:true });
+	//$('input[name="dateFin"]').rules("add", { required:true });
+
+${IF:'${EVAL:replace('${dateDebut}',':',' ')}'=='':@@@
+	//$('#dateDebut').val('${dateDebut}');
+	$('#dateFin').datetimepicker('setStartDate', '${dateDebut}');
+}
+${IF:'${EVAL:replace('${dateFin}',':',' ')}'=='':@@@
+	//$('#dateFin').val('${dateFin}');
+	//$('#dateDebut').datetimepicker('setEndDate', '${dateFin}');
+}
+
+    $('#registerForm').validate();
+
+	$("#fileForm").validate();
+	$("#fileInput").filestyle({buttonText:" ", size: "sm"});
+	$("#fileInput").change(function() {cxOnFileChange('${APP:CONTEXT}', '', 'addDocToObject');});
+    $("#fileForm").removeClass("show").addClass("hidden");
+}
+});
+
+
+function addNewFile() {
+	if ($("#fileForm").is(":visible")) {
+		$("#fileForm").removeClass("show").addClass("hidden");
+		$("#imgAddNewFile").attr("src","${APP:CONTEXT}/acquityCX/images/toolbar/new.png");
+	} else {
+    	$("#fileForm").removeClass("hidden").addClass("show");
+		$("#imgAddNewFile").attr("src","${APP:CONTEXT}/acquityCX/images/toolbar/cancel.png");
+    }
+}
+
+function addDocToObject() {
+	var fileNames = {//
+		realFileName :  $("#realFileName").val(), //
+		tempFileName:  $("#tempFileName").val()//
+	};
+	var wsURL = "${APP:CONTEXT}/rest/demande/addDocJoined?${portail.params}";
+	$.ajax({
+            url: wsURL,
+            type: "POST",
+           // cache: false,
+            dataType: "json", // selon le retour attendu
+            data: fileNames
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+			//if fails
+			//alert('addDocToObject fails');
+			$("#uploadFileProgress").removeClass("active").removeClass("show").addClass("hidden");
+			$("#uploadFileError").removeClass("hidden").addClass("show").text("File too big");
+			$("#realFileName").val("");
+			$("#tempFileName").val("");
+
+			alert("textStatus=" + textStatus
+				+ ", errorThrown=" + errorThrown
+				+ ", jqXHR.responseText=" + jqXHR.responseText
+				+ ", jqXHR.responseXML=" + jqXHR.responseXML);
+			//for (variable in jqXHR)
+   			//	alert(variable +"="+eval("jqXHR."+variable));
+   			
+            $('#fileForm').valid();
+	}).done(function(data, textStatus, jqXHR) {
+			//alert('addDocToObject ok');
+			$("#uploadFileProgress").removeClass("active").removeClass("show").addClass("hidden");
+			if(data.error){
+				$("#uploadFileError").removeClass("hidden").addClass("show");
+				$("#uploadFileError").text("L'erreur suivante s'est produite : " + data.error);
+			} else {
+				//refresh
+				window.location.reload();
+			}
+	});
+}
+
+function deleteDocJoined(docId) {
+	var wsURL = "${APP:CONTEXT}/rest/demande/deleteDocJoined?${portail.params}&djid="+docId;
+	$.ajax({
+            url: wsURL,
+            type: "get",
+            dataType: "json" // selon le retour attendu
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+			//if fails
+			if(jqXHR.responseText){
+				alert(jqXHR.responseText);
+			} else {
+				alert("deleteDocJoined : textStatus=" + textStatus
+					+ ", errorThrown=" + errorThrown
+					+ ", jqXHR.responseText=" + jqXHR.responseText
+					+ ", jqXHR.responseXML=" + jqXHR.responseXML);
+			}
+
+	}).done(function(data, textStatus, jqXHR) {
+		//refresh
+		location.reload(); 
+	});
+}
+
+
+//callback handler for form submit
+function submitRegistration() {
+	$("#registerResult").removeClass("hidden").addClass("show").removeClass("alert-warning").removeClass("alert-success").text("");
+
+	var RegisterForm = $('#registerForm');
+	if (!RegisterForm.valid())
+        return false;	
+	if( !$('#dateDebut').val() || !$('#dateFin').val()) {
+		if( !$('#dateDebut').val()) {
+			$('#dateDebut').closest('.form-group').removeClass('has-success').addClass('has-error');
+			$('#dateDebut').closest('.form-group').find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-warning-sign');
+		}
+		if( !$('#dateFin').val()) {
+			$('#dateFin').closest('.form-group').removeClass('has-success').addClass('has-error');
+			$('#dateFin').closest('.form-group').find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-warning-sign');
+		}
+        return false;	
+	}
+
+	$("#registerProgress").removeClass("hidden").addClass("show").addClass("active");
+	$("#registerButton").prop("disabled",true);
+
+	var formData = RegisterForm.serialize();
+	var formURL = RegisterForm.attr("action") + "?${portail.params}";
+	if (getParam("s")!=null)
+		formURL=formURL+"&s="+getParam("s");
+	
+	$.ajax({
+		type: "POST",
+		url : formURL,
+		dataType : "json",
+        data: formData
+	})
+	.fail(function(jqXHR, textStatus, errorThrown)
+		{
+			//alert("fails");
+			$("#registerProgress").removeClass("active").removeClass("show").addClass("hidden");
+			$("#registerResult").removeClass("alert-success").addClass("alert-warning").text("L'erreur suivante s'est produite : " + jqXHR.responseText);
+			$("#registerButton").prop("disabled",false);
+		})
+	.done(function(data, textStatus, jqXHR)
+		{
+			$("#registerProgress").removeClass("active").removeClass("show").addClass("hidden");
+			if(data.error){
+				$("#registerResult").removeClass("alert-warning").addClass("alert-success").text("L'erreur suivante s'est produite : " + data.error);
+				
+			} else{
+				$("#registerResult").removeClass("alert-warning").addClass("alert-success").text("Success");
+				document.location.href = "${APP:CONTEXT}/rest/demande/showAction?key="+data.key+"&c=${APP:CONTEXTDIR}";
+			}
+			$("#registerButton").prop("disabled",false);
+		});
+}
+</script>
+
+</body>
+</html>

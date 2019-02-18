@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <style>
+ <style>
     .fmFormVerdana16 {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 16pt;
@@ -46,6 +46,7 @@
         color: #1F497D;
     }
     </style>
+
 </head>
 <body style="overflow-x: hidden">
     <section id="formHeader" style="background-color:#1F497D;margin:0;padding:0">
@@ -83,7 +84,7 @@
          </div>
      </section>
     <section id="formInfos">
-        <div class="container-fluid" style="background-image:url(images/FM.png); background-size:cover;background-repeat:no-repeat; background-position: center; ">
+        <div class="container-fluid" style="background-image:url(${APP:CONTEXT}/images/FM-cover.png); background-size:cover;background-repeat:no-repeat; background-position: center; ">
             <div class="row" style="color:white;">
                 <div class="col-md-9 col-sm-6 col-6" style="text-align: center; padding:15px;">
                     <p style="margin:0">
@@ -114,7 +115,7 @@
                         <p style="font-size:12pt;padding-top: 15px; margin:0 auto;"> ${P:demande.demandeClassification.nom}</p>
                     </div>
                     <div class="col-md-5 col-sm-12 col-12">
-                        <p class="text-left fmFormVerdana16" style="padding-top:15px;margin:0 auto;text-align: right;">ADMINISTRATION ACQUITY</p>
+                      
                     </div>
                 </div>
                 <div class="row m-0">
@@ -143,11 +144,11 @@
                             <div class="row">
                                 <div class="col-md-12" style="margin-top: 10px;">
                                         <label for="dateDebut">${I18N:${language}:all.dateDebut}</label>
-                                        <input type="date" class="form-control" id="DateDebut" name="dateDebut" placeholder="Dade début" checked required>
+                                        <input type="date" class="form-control" id="DateDebut" name="dateDebut" placeholder="Date début" checked required>
                                 </div> 
                                 <div class="col-md-12" style="margin-top: 10px;">   
                                         <label for="dateDebut">${I18N:${language}:all.dateFin}</label>
-                                        <input type="date" class="form-control" id="DateFin" name="dateFin" placeholder="Dade fin" checked required>
+                                        <input type="date" class="form-control" id="DateFin" name="dateFin" placeholder="Date fin" checked required>
                                 </div> 
                             </div>
                             <div class="row">
@@ -170,38 +171,83 @@
                     <div class="col-lg-6 col-md-12">
                         <div class="row m-0">
                             <div class=" col-lg-6 col-md-6 col-sm-6 col-6 p-0"  style="border-bottom:0.5px solid #BEB9B8">
-                                <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">${I18N:${language}:chapitre.cxsLocaux}</p> 
+                                  ${FOREACH:demande.objects:objItem:
+                                       (objItem.cxsLocal.completeName)
+                                   }
+                               
+                                 ${VS:docs:list(cxsDocumentObject:(,parentId=${P:id},and,parentType=demandeAction,),or,(,parentId=${P:demande.id},and,parentType=demande,))}
+                                <p class="fmFormVerdana16" style="padding-top: 15px;margin:0 auto">${I18N:${language}:button.docJoints}</p> 
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-6 p-0"  style="border-bottom:0.5px solid #BEB9B8;">
                                 <p style="padding-top: 20px; margin:0 auto">(Docx, Text, PDF, PNG, JPG)</p>
                             </div>
                             <div class="col-md-12 col-12" style="margin-top: 35px;">
-                                <button type="button" class="btn btn-outline-secondary"><img src="https://image.noelshack.com/minis/2019/07/4/1550159649-cloud-storage-uploading-option-2.png" style="height:35px"> Télécharger un fichier</button>
-                                <div class="col-md-12 col-12" style="border: 0.5px solid #BEB9B8;margin-top:12px">
-                                    <div class="row" style="margin:0 auto; padding:20px;">
-                                        <div class="col-lg-8 col-md-8 col-sm-8 col-8">
-                                            <p style="margin:0 auto; text-align: center">
-                                                NOM DE FICHIER
-                                            </p>
-                                            <p style="font-size:12pt;padding-top: 15px; margin:0 auto; text-align: center">
-                                                <i class="fa fa-file" aria-hidden="true"></i> acquity_web_1.png</p>
-                                            <p style="font-size:12pt;padding-top: 15px; margin:0 auto; text-align: center">
-                                                <i class="fa fa-file" aria-hidden="true"></i> acquity_web_2.png</p>
-                                        </div>
-                                        <div class="col-lg-4 col-md-4 col-sm-4 col-4">
-                                            <p style="margin:0 auto; text-align: center">
-                                                RETIRER
-                                            </p>
-                                            <p style="margin:0 auto; text-align: center; padding-top: 15px;">
-                                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </p>
-                                            <p style="margin:0 auto; text-align: center; padding-top: 15px;">
-                                                    <i class="fa fa-trash" aria-hidden="true"></i>
-                                            </p>
+                                <a href="javascript:addNewFile();"><button type="button" class="btn btn-outline-secondary" data-buttonText="..." data-size="sm"><img src="${APP:CONTEXT}/acquityCX/images/toolbar/new.png" id="fileInput" style="width:24px;height:auto;" class="filestyle" data-buttonText="..." data-size="sm">
+                                    Télécharger un fichier </button></a>
+                                <form class="form-horizontal hidden" role="form" style="padding-left:15px;padding-right:15px;"
+                                id="fileForm" name="fileForm" method="post" enctype="multipart/form-data">		
+                                <div class="form-group form-group-sm" style="margin-bottom:5px;">
+                                    <div class="input-group col-sm-9">
+                                        <!-- <input type="file" id="fileInput" name="fileInput" class="filestyle" data-buttonText="..." data-size="sm"> -->
+                                    </div>
+                                    <span class="help-block"></span>
+                                </div>		
+                                <div class="row">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-9 progress hidden" id="uploadFileProgress" name="uploadFileProgress">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" 
+                                                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                                                Uploading file, please wait...
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-sm-3"></div>
+                                    <div class="col-sm-9 alert-warning hidden" id="uploadFileError" name="uploadFileError"></div>
+                                </div>
+                                <input type="hidden" id="tempFileName" name="tempFileName"/>
+                                <input type="hidden" id="realFileName" name="realFileName"/>
+                            </form>
                             </div>
+                            ${IF:${V:docs?size}==0::
+                            <div class="col-md-12 col-12" style="border: 0.5px solid #BEB9B8;margin-top:12px">
+                                <div class="row" style="margin:0 auto;">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                        <p style="margin:0 auto; text-align: center">
+                                           NOM DE FICHIER
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                        <p style="margin:0 auto; text-align: center">
+                                            RETIRER
+                                        </p>
+                                    </div>
+                                </div>
+                                ${FOREACH:v.docs:docItem:
+                                <div class="row" style="margin:0 auto;">
+                                    <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                                        <p style="font-size:12pt;padding-top: 15px; margin:0 auto; text-align: center">
+                                            <i class="fa fa-file" aria-hidden="true"></i>
+                                            <a href="${APP:CONTEXT}/.cxuDownload?contextDir=${APP:CONTEXTDIR}&object=(docItem.cxsDocument.group)&fileName=fromDisk.(docItem.cxsDocument.fileName)" 
+			  			                    target="_blank"> (docItem.cxsDocument.title)</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-4 col-4">
+                                        (docItem.[equal(createdBy;${APP:USER})@@@
+                                        <p style="margin:0 auto; text-align: center; padding-top: 15px;">
+                                            <a href="javascript:deleteDocJoined((id));">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </a>
+                                        </p>])
+                                        (docItem.[notEqual(createdBy;${APP:USER})@@@
+                                        <p style="margin:0 auto; text-align: center; padding-top: 15px;">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </p>])
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                            }
                         </div>
                     </div>
                 </div>
@@ -216,14 +262,183 @@
             </div>
         </div>
     </section>
-    <script src="jquery/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Intégration de la libraire jQuery -->
+<script src="${APP:CONTEXT}/bootstrap_ext/js/jquery-2.1.0.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/jquery.validate.min.js"></script>
+<!-- Intégration de la libraire de composants du Bootstrap -->
+<script src="${APP:CONTEXT}/bootstrap/js/bootstrap.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-datetimepicker.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-datetimepicker.fr.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-select.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/bootstrap-filestyle.min.js"></script>
+<script src="${APP:CONTEXT}/bootstrap_ext/js/acquity-forms.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function () {
+	$('.selectpicker').selectpicker();
+
+${IF:${VE:responseIntervenant}==1::
+    $("#dateDebut").datetimepicker({startView:2,autoclose:true, format: "dd/mm/yyyy hh:ii",language:"fr"});
+    $("#dateFin").datetimepicker({startView:2,autoclose:true, format: "dd/mm/yyyy  hh:ii",language:"fr"});
+    
+	$('#dateDebut').datetimepicker().on('changeDate', function(ev){
+		$('#dateFin').datetimepicker('setStartDate', ev.date);
+	});
+	$('#dateFin').datetimepicker().on('changeDate', function(ev){
+		$('#dateDebut').datetimepicker('setEndDate', ev.date);
+	});
+
+	//$('input[name="dateDebut"]').rules("add", { required:true });
+	//$('input[name="dateFin"]').rules("add", { required:true });
+
+${IF:'${EVAL:replace('${dateDebut}',':',' ')}'=='':@@@
+	//$('#dateDebut').val('${dateDebut}');
+	$('#dateFin').datetimepicker('setStartDate', '${dateDebut}');
+}
+${IF:'${EVAL:replace('${dateFin}',':',' ')}'=='':@@@
+	//$('#dateFin').val('${dateFin}');
+	//$('#dateDebut').datetimepicker('setEndDate', '${dateFin}');
+}
+
+    $('#registerForm').validate();
+
+	$("#fileForm").validate();
+	$("#fileInput").filestyle({buttonText:" ", size: "sm"});
+	$("#fileInput").change(function() {cxOnFileChange('${APP:CONTEXT}', '', 'addDocToObject');});
+    $("#fileForm").removeClass("show").addClass("hidden");
+}
+});
 
 
-        <!-- Plugin JavaScript -->
-    <script src="jquery-easing/jquery.easing.min.js"></script>	
-    <script src="bootstrap_ext/js/acquity.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+function addNewFile() {
+	if ($("#fileForm").is(":visible")) {
+		$("#fileForm").removeClass("show").addClass("hidden");
+		$("#imgAddNewFile").attr("src","${APP:CONTEXT}/acquityCX/images/toolbar/new.png");
+	} else {
+    	$("#fileForm").removeClass("hidden").addClass("show");
+		$("#imgAddNewFile").attr("src","${APP:CONTEXT}/acquityCX/images/toolbar/cancel.png");
+    }
+}
+
+function addDocToObject() {
+	var fileNames = {//
+		realFileName :  $("#realFileName").val(), //
+		tempFileName:  $("#tempFileName").val()//
+	};
+	var wsURL = "${APP:CONTEXT}/rest/demande/addDocJoined?${portail.params}";
+	$.ajax({
+            url: wsURL,
+            type: "POST",
+           // cache: false,
+            dataType: "json", // selon le retour attendu
+            data: fileNames
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+			//if fails
+			//alert('addDocToObject fails');
+			$("#uploadFileProgress").removeClass("active").removeClass("show").addClass("hidden");
+			$("#uploadFileError").removeClass("hidden").addClass("show").text("File too big");
+			$("#realFileName").val("");
+			$("#tempFileName").val("");
+
+			alert("textStatus=" + textStatus
+				+ ", errorThrown=" + errorThrown
+				+ ", jqXHR.responseText=" + jqXHR.responseText
+				+ ", jqXHR.responseXML=" + jqXHR.responseXML);
+			//for (variable in jqXHR)
+   			//	alert(variable +"="+eval("jqXHR."+variable));
+   			
+            $('#fileForm').valid();
+	}).done(function(data, textStatus, jqXHR) {
+			//alert('addDocToObject ok');
+			$("#uploadFileProgress").removeClass("active").removeClass("show").addClass("hidden");
+			if(data.error){
+				$("#uploadFileError").removeClass("hidden").addClass("show");
+				$("#uploadFileError").text("L'erreur suivante s'est produite : " + data.error);
+			} else {
+				//refresh
+				window.location.reload();
+			}
+	});
+}
+
+function deleteDocJoined(docId) {
+	var wsURL = "${APP:CONTEXT}/rest/demande/deleteDocJoined?${portail.params}&djid="+docId;
+	$.ajax({
+            url: wsURL,
+            type: "get",
+            dataType: "json" // selon le retour attendu
+	}).fail(function(jqXHR, textStatus, errorThrown) {
+			//if fails
+			if(jqXHR.responseText){
+				alert(jqXHR.responseText);
+			} else {
+				alert("deleteDocJoined : textStatus=" + textStatus
+					+ ", errorThrown=" + errorThrown
+					+ ", jqXHR.responseText=" + jqXHR.responseText
+					+ ", jqXHR.responseXML=" + jqXHR.responseXML);
+			}
+
+	}).done(function(data, textStatus, jqXHR) {
+		//refresh
+		location.reload(); 
+	});
+}
+
+
+//callback handler for form submit
+function submitRegistration() {
+	$("#registerResult").removeClass("hidden").addClass("show").removeClass("alert-warning").removeClass("alert-success").text("");
+
+	var RegisterForm = $('#registerForm');
+	if (!RegisterForm.valid())
+        return false;	
+	if( !$('#dateDebut').val() || !$('#dateFin').val()) {
+		if( !$('#dateDebut').val()) {
+			$('#dateDebut').closest('.form-group').removeClass('has-success').addClass('has-error');
+			$('#dateDebut').closest('.form-group').find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-warning-sign');
+		}
+		if( !$('#dateFin').val()) {
+			$('#dateFin').closest('.form-group').removeClass('has-success').addClass('has-error');
+			$('#dateFin').closest('.form-group').find('.glyphicon').removeClass('glyphicon-ok').addClass('glyphicon-warning-sign');
+		}
+        return false;	
+	}
+
+	$("#registerProgress").removeClass("hidden").addClass("show").addClass("active");
+	$("#registerButton").prop("disabled",true);
+
+	var formData = RegisterForm.serialize();
+	var formURL = RegisterForm.attr("action") + "?${portail.params}";
+	if (getParam("s")!=null)
+		formURL=formURL+"&s="+getParam("s");
+	
+	$.ajax({
+		type: "POST",
+		url : formURL,
+		dataType : "json",
+        data: formData
+	})
+	.fail(function(jqXHR, textStatus, errorThrown)
+		{
+			//alert("fails");
+			$("#registerProgress").removeClass("active").removeClass("show").addClass("hidden");
+			$("#registerResult").removeClass("alert-success").addClass("alert-warning").text("L'erreur suivante s'est produite : " + jqXHR.responseText);
+			$("#registerButton").prop("disabled",false);
+		})
+	.done(function(data, textStatus, jqXHR)
+		{
+			$("#registerProgress").removeClass("active").removeClass("show").addClass("hidden");
+			if(data.error){
+				$("#registerResult").removeClass("alert-warning").addClass("alert-success").text("L'erreur suivante s'est produite : " + data.error);
+				
+			} else{
+				$("#registerResult").removeClass("alert-warning").addClass("alert-success").text("Success");
+				document.location.href = "${APP:CONTEXT}/rest/demande/showAction?key="+data.key+"&c=${APP:CONTEXTDIR}";
+			}
+			$("#registerButton").prop("disabled",false);
+		});
+}
+</script>
 </body>
 </html>

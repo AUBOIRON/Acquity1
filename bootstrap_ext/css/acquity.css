@@ -427,5 +427,9 @@ a.social-buttons:active,a.social-buttons:focus, a.social-buttons:hover {
   transform: rotate(90deg);
   background-color: white;
 }
+.marqueeImg{
+  width:300px;
+  height:150px;
+}
 
  
